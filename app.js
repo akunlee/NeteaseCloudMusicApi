@@ -58,8 +58,8 @@ app.use(fileUpload())
 // static
 app.use(express.static(path.join(__dirname, 'public')))
 
-// cache
-app.use(cache('2 minutes', (req, res) => res.statusCode === 200))
+// cache minutes
+app.use(cache('1 s', (req, res) => res.statusCode === 200))
 // router
 const special = {
   'daily_signin.js': '/daily_signin',
